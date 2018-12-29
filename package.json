@@ -1,0 +1,40 @@
+{
+  "name": "tirukural-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server",
+  "scripts": {
+    "start": "nodemon --exec babel-node --ignore lib/ --ignore src/client/ ./src/server",
+    "build": "webpack",
+    "watch": "webpack-dev-server --hot --open",
+    "transpile": "babel src/server --out-dir lib/server --delete-dir-on-start",
+    "start:prod": "webpack --mode production && NODE_ENV=production npm run transpile && node ./lib/server/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "mani",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
+    "dotenv": "^6.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.18.9",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}

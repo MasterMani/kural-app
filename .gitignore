@@ -1,0 +1,9 @@
+/node_modules/
+/data/
+/lib/
+/test/data.json
+/test/kuralmodel-test.js
+/test/parseKural.js
+/test/output.json
+.env
+package-lock.json
