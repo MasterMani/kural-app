@@ -11,6 +11,8 @@ const { DB_NAME, MONGO_URL, NODE_ENV } = process.env
 const isProd = (NODE_ENV === "production")
 const PORT = 3000
 
+app.disable('x-powered-by')
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
