@@ -4,12 +4,9 @@
   "description": "",
   "main": "server",
   "scripts": {
-    "start": "nodemon --exec babel-node --ignore lib/ --ignore src/client/ ./src/server",
-    "build": "webpack",
-    "watch": "webpack-dev-server --hot --open",
-    "transpile": "babel src/server --out-dir lib/server --delete-dir-on-start",
-    "start:prod": "webpack --mode production && NODE_ENV=production npm run transpile && node ./lib/server/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "NODE_ENV=production npm run build && node ./src/server",
+    "build": "webpack --config ./config/webpack.dev.babel.js",
+    "dev": "nodemon --inspect --watch ./config/ --watch ./src/server/ ./src/server/"
   },
   "keywords": [],
   "author": "mani",
@@ -24,11 +21,15 @@
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^1.0.0",
     "dotenv": "^6.2.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.18.9",
+    "react-hot-loader": "^4.6.3",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-middleware": "^3.5.0",
+    "webpack-dev-server": "^3.1.11",
+    "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
     "async": "^2.6.1",
